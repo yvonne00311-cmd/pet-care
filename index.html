@@ -68,10 +68,20 @@
 
     .pet-photo {
       min-height: 300px;
-      border-radius: 8px;
-      background:
-        linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.08)),
-        url("https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80") center/cover;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #fff9e9, #ffe4c8);
+      border: 1px solid rgba(246, 177, 118, .45);
+      box-shadow: 0 18px 45px rgba(111, 77, 55, .16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .dog-illustration {
+      width: min(92%, 360px);
+      height: auto;
+      filter: drop-shadow(0 18px 18px rgba(105, 73, 50, .18));
     }
 
     section {
@@ -247,7 +257,34 @@
         <p>洗护、美容、寄养、健康提醒，一站式照顾你的猫猫狗狗。温柔一点，细心一点，让宠物每天都舒服自在。</p>
         <a class="btn" href="#contact">预约咨询</a>
       </div>
-      <div class="pet-photo" aria-label="宠物照片"></div>
+      <div class="pet-photo" aria-label="卡通狗狗图像">
+        <svg class="dog-illustration" viewBox="0 0 420 320" role="img" aria-labelledby="dogTitle dogDesc" xmlns="http://www.w3.org/2000/svg">
+          <title id="dogTitle">卡通狗狗</title>
+          <desc id="dogDesc">一只戴着绿色项圈、坐在暖色背景前微笑的卡通狗狗。</desc>
+          <circle cx="88" cy="76" r="16" fill="#ffd36f" opacity=".8"/>
+          <circle cx="348" cy="70" r="11" fill="#8fd6a4" opacity=".75"/>
+          <circle cx="360" cy="238" r="18" fill="#ffd36f" opacity=".55"/>
+          <path d="M90 262c26-32 38-79 76-77 22 1 32 17 43 34 13-27 31-44 58-42 53 5 71 54 59 92H86c1-2 2-5 4-7Z" fill="#f5b66c"/>
+          <path d="M118 154c-32 4-59 28-66 60-4 20 4 34 19 36 23 3 41-22 49-53 4-16 5-31-2-43Z" fill="#7a4e32"/>
+          <path d="M302 154c32 4 59 28 66 60 4 20-4 34-19 36-23 3-41-22-49-53-4-16-5-31 2-43Z" fill="#7a4e32"/>
+          <path d="M98 123c18-45 58-75 112-75s94 30 112 75c16 41 2 95-31 124-21 19-49 29-81 29s-60-10-81-29c-33-29-47-83-31-124Z" fill="#f7c982"/>
+          <path d="M139 88c18-26 42-40 71-40s53 14 71 40c-18 8-43 13-71 13s-53-5-71-13Z" fill="#ffe0a6"/>
+          <path d="M142 60c-28 9-52 36-61 70 36 8 69-14 79-47 4-14-4-27-18-23Z" fill="#8a5a3b"/>
+          <path d="M278 60c28 9 52 36 61 70-36 8-69-14-79-47-4-14 4-27 18-23Z" fill="#8a5a3b"/>
+          <circle cx="158" cy="154" r="18" fill="#fff7e8"/>
+          <circle cx="262" cy="154" r="18" fill="#fff7e8"/>
+          <circle cx="161" cy="157" r="8" fill="#253238"/>
+          <circle cx="259" cy="157" r="8" fill="#253238"/>
+          <circle cx="164" cy="153" r="3" fill="#ffffff"/>
+          <circle cx="262" cy="153" r="3" fill="#ffffff"/>
+          <path d="M190 177c10-8 30-8 40 0 4 3 3 10-2 13l-12 8c-4 3-8 3-12 0l-12-8c-5-3-6-10-2-13Z" fill="#4b2d1d"/>
+          <path d="M210 198c0 16-12 27-29 27" fill="none" stroke="#4b2d1d" stroke-width="6" stroke-linecap="round"/>
+          <path d="M210 198c0 16 12 27 29 27" fill="none" stroke="#4b2d1d" stroke-width="6" stroke-linecap="round"/>
+          <path d="M176 232c18 15 50 15 68 0" fill="none" stroke="#4b2d1d" stroke-width="6" stroke-linecap="round"/>
+          <path d="M149 254c34 22 88 22 122 0" fill="none" stroke="#2f7d57" stroke-width="14" stroke-linecap="round"/>
+          <circle cx="210" cy="264" r="14" fill="#ffd36f" stroke="#ffffff" stroke-width="5"/>
+        </svg>
+      </div>
     </section>
 
     <section id="services">
