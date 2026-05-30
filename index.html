@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>暖爪宠物护理</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      color: #263238;
+      background: #f7faf8;
+    }
+
+    header {
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      border-bottom: 1px solid #e6eee9;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 22px;
+      color: #2f7d57;
+    }
+
+    nav a {
+      margin-left: 18px;
+      color: #455a64;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 72px 8%;
+      background: linear-gradient(120deg, #dff3e8, #fff4d8);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 44px;
+      margin: 0 0 16px;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 0 0 24px;
+      color: #546e7a;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 6px;
+      background: #2f7d57;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .pet-photo {
+      min-height: 300px;
+      border-radius: 8px;
+      background:
+        linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.08)),
+        url("https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80") center/cover;
+    }
+
+    section {
+      padding: 46px 8%;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background: white;
+      border: 1px solid #d9e6df;
+    }
+
+    .carousel input {
+      display: none;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform .35s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+      min-height: 240px;
+      box-sizing: border-box;
+      padding: 38px 76px;
+      color: white;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .slide h3 {
+      margin: 0 0 12px;
+      font-size: 30px;
+    }
+
+    .slide p {
+      max-width: 460px;
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .wash {
+      background-image: linear-gradient(90deg, rgba(38,50,56,.78), rgba(38,50,56,.22)), url("https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=80");
+    }
+
+    .beauty {
+      background-image: linear-gradient(90deg, rgba(38,50,56,.78), rgba(38,50,56,.22)), url("https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=1200&q=80");
+    }
+
+    .boarding {
+      background-image: linear-gradient(90deg, rgba(38,50,56,.78), rgba(38,50,56,.22)), url("https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=1200&q=80");
+    }
+
+    #service2:checked ~ .slides { transform: translateX(-100%); }
+    #service3:checked ~ .slides { transform: translateX(-200%); }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: none;
+      place-items: center;
+      background: rgba(255,255,255,.9);
+      color: #2f7d57;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .prev { left: 18px; }
+    .next { right: 18px; }
+
+    #service1:checked ~ .arrow.s1,
+    #service2:checked ~ .arrow.s2,
+    #service3:checked ~ .arrow.s3 {
+      display: grid;
+    }
+
+    .dots {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 16px;
+      text-align: center;
+    }
+
+    .dots label {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 4px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.65);
+      cursor: pointer;
+    }
+
+    #service1:checked ~ .dots label:nth-child(1),
+    #service2:checked ~ .dots label:nth-child(2),
+    #service3:checked ~ .dots label:nth-child(3) {
+      background: white;
+    }
+
+    .about {
+      background: white;
+      line-height: 1.8;
+      color: #546e7a;
+    }
+
+    footer {
+      padding: 24px 8%;
+      background: #263238;
+      color: white;
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      header, .hero {
+        display: block;
+      }
+
+      nav {
+        margin-top: 12px;
+      }
+
+      nav a {
+        margin: 0 12px 0 0;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .pet-photo {
+        margin-top: 28px;
+      }
+
+      .slide {
+        min-height: 280px;
+        padding: 34px 56px;
+      }
+
+      .slide h3 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">暖爪宠物护理</div>
+    <nav>
+      <a href="#services">服务</a>
+      <a href="#about">关于我们</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>给毛孩子更安心的日常照护</h1>
+        <p>洗护、美容、寄养、健康提醒，一站式照顾你的猫猫狗狗。温柔一点，细心一点，让宠物每天都舒服自在。</p>
+        <a class="btn" href="#contact">预约咨询</a>
+      </div>
+      <div class="pet-photo" aria-label="宠物照片"></div>
+    </section>
+
+    <section id="services">
+      <h2>我们的服务</h2>
+      <div class="carousel">
+        <input type="radio" name="service" id="service1" checked>
+        <input type="radio" name="service" id="service2">
+        <input type="radio" name="service" id="service3">
+
+        <div class="slides">
+          <article class="slide wash">
+            <h3>宠物洗护</h3>
+            <p>基础清洁、吹干梳毛、耳朵与爪爪护理，让每次洗澡都更安心。</p>
+          </article>
+          <article class="slide beauty">
+            <h3>美容造型</h3>
+            <p>按品种、毛量和季节修剪，清爽好看，也更方便日常打理。</p>
+          </article>
+          <article class="slide boarding">
+            <h3>短期寄养</h3>
+            <p>外出旅行或加班时，帮你照看宠物起居，按时喂食和陪伴。</p>
+          </article>
+        </div>
+
+        <label class="arrow prev s1" for="service3">‹</label>
+        <label class="arrow next s1" for="service2">›</label>
+        <label class="arrow prev s2" for="service1">‹</label>
+        <label class="arrow next s2" for="service3">›</label>
+        <label class="arrow prev s3" for="service2">‹</label>
+        <label class="arrow next s3" for="service1">›</label>
+
+        <div class="dots">
+          <label for="service1"></label>
+          <label for="service2"></label>
+          <label for="service3"></label>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2>关于我们</h2>
+      <p>暖爪宠物护理是一家社区宠物护理小店。我们重视安全、耐心和干净的环境，也会根据每只宠物的性格调整照护方式。</p>
+    </section>
+
+    <section id="contact">
+      <h2>联系我们</h2>
+      <p>电话：138-0000-0000</p>
+      <p>地址：幸福路 88 号宠物生活馆</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 暖爪宠物护理 · 用心照顾每一只小伙伴
+  </footer>
+</body>
+</html>
